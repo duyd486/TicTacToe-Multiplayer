@@ -14,40 +14,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.00
   subtype: tictactoengofree
-  lastShownTimestamp: 1738479606
+  lastShownTimestamp: 1755422608
   lastUpdateResponse:
     version: 1.00
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1738479606
+  checkedLastUpdateTimestamp: 1755427372
   lastQOTDResponse:
-    questionId: 146
-    questionText: The Profiler is useful for...
-    answerA: Balancing difficulty
-    answerB: Level Design
-    answerC: Indentifying performance bottlenecks
+    questionId: 212
+    questionText: 'What is the value stored in percentage?
+
+      <p>int health =
+      25;</p>
+
+      <p>int healthMax = 100;</p>
+
+      <p>float percentage = health
+      / healthMax;</p>'
+    answerA: 0.25f
+    answerB: 0
+    answerC: 2.5f
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1738479606
+  lastQotdTimestamp: 1755427372
   lastDynamicHeaderResponse:
-    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/Gif_FreeCourses.gif
-    topText: Learn Unity and C# with my Complete FREE Courses!
-    topLink: freecourses
-    bottomText: My 10+ Years of C# Knowledge in 1 Course!
-    bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1738479606
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/summer2025CodeMonkeyBundle.png
+    topText: All my Courses (and Games) in one Bundle! DEEP DISCOUNT ONLY THIS SUMMER!
+    topLink: summer2025bundle
+    bottomText: Get my Code Monkey Toolkit and make games BETTER and FASTER! 50%
+      OFF right now!
+    bottomLink: toolkit
+  lastDynamicHeaderTimestamp: 1755427372
   websiteLatestMessage:
-    text: <a href="https://cmonkey.co/tictactoenfefree">I just published my latest
-      FREE course! Click here!</a>
-  websiteLatestMessageTimestamp: 1738479606
+    text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
+      Click here!</a>
+  websiteLatestMessageTimestamp: 1755427372
   websiteLatestVideos:
     videos:
-    - youTubeId: 7xYkle9adR8
-      title: TOP 20 Visual Assets to INSPIRE YOU! (JANUARY 2025)
-    - youTubeId: -3EVvJ8kr1U
-      title: Learn Netcode for Entities (FREE Course, SUPER FAST Multiplayer with
-        Unity DOTS)
-    - youTubeId: O7ta2WObdxc
-      title: Another FREE Course Incoming!
-    - youTubeId: vzEJ08YdKPo
-      title: TOP 10 NEW Systems and Tools JANUARY 2025! | Unity Asset Store
-  websiteLatestVideosTimestamp: 1738479606
+    - youTubeId: CZ5rsOwgcl4
+      title: Unity 6.2 is HERE!
+    - youTubeId: taWg92DaORw
+      title: The 5 MUST HAVE Assets you NEED! (SALE ENDS SOON!)
+    - youTubeId: nGKd4yTP3M8
+      title: Learn Unity 2D Beginner FREE COMPLETE Course
+    - youTubeId: 7xz5Xh4E_B0
+      title: I NEED your HELP!
+  websiteLatestVideosTimestamp: 1755427372
