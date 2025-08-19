@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17737e0516da2445b9b0077ae2bd9b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Visible: 1
+  m_Visible: 0
   m_MaxRefreshRate: 30
   <CustomStyleSheet>k__BackingField: {fileID: 0}
   <PanelSettingsOverride>k__BackingField: {fileID: 0}
@@ -727,6 +727,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   circlePrefab: {fileID: 4257161373016243514, guid: ab43bdadd9bd953468c45a8a4d016df0, type: 3}
   crossPrefab: {fileID: 4257161373016243514, guid: 24cf194d0d4569c4f8ba804479ecf057, type: 3}
+  lineCompletePrefab: {fileID: 5487711026891206801, guid: cdb50fa12029c9b4395d23846d527def, type: 3}
 --- !u!4 &415931041
 Transform:
   m_ObjectHideFlags: 0

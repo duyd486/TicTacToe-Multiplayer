@@ -15,6 +15,11 @@ public class GameManager : NetworkBehaviour
     }
 
     public event EventHandler OnGameStarted;
+    public event EventHandler<OnGameWinEventArgs> OnGameWin;
+    public class OnGameWinEventArgs : EventArgs
+    {
+        public Vector2Int centerGridPosition;
+    }
     public event EventHandler OnCurrentPlayablePlayerTypeChanged;
 
     public enum PlayerType
@@ -95,8 +100,28 @@ public class GameManager : NetworkBehaviour
                 currentPlayablePlayerType.Value = PlayerType.Cross;
                 break;
         }
+        TestWinner();
     }
 
+    private bool TestWinnerLine(PlayerType aPlayerType, PlayerType bPlayerType, PlayerType cPlayerType)
+    {
+        return aPlayerType != PlayerType.None &&
+            aPlayerType == bPlayerType && 
+            bPlayerType == cPlayerType;
+    }
+
+    private void TestWinner()
+    {
+        if (TestWinnerLine(playerTypeArr[0,0], playerTypeArr[1,0], playerTypeArr[2, 0]))
+        {
+            Debug.Log("Last Line Win");
+            currentPlayablePlayerType.Value = PlayerType.None;
+            OnGameWin?.Invoke(this, new OnGameWinEventArgs
+            {
+                centerGridPosition = new Vector2Int(1,0),
+            });
+        }
+    }
 
     public PlayerType GetLocalPlayerType()
     {
