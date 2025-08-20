@@ -18,7 +18,18 @@ public class GameVisualManager : NetworkBehaviour
 
     private void GameManager_OnGameWin(object sender, GameManager.OnGameWinEventArgs e)
     {
-        Transform lineCompleteTransform = Instantiate(lineCompletePrefab, GetGridWorldPosition(e.centerGridPosition.x, e.centerGridPosition.y), Quaternion.identity);
+        float eulerZ = 0f;
+        switch (e.line.orientation)
+        {
+            default:
+            case GameManager.Orientation.Horizontal: eulerZ = 0f; break;
+            case GameManager.Orientation.Vertical: eulerZ = 90f; break;
+            case GameManager.Orientation.DiagonalA: eulerZ = 45f; break;
+            case GameManager.Orientation.DiagonalB: eulerZ = -45f; break;
+
+        }
+
+        Transform lineCompleteTransform = Instantiate(lineCompletePrefab, GetGridWorldPosition(e.line.centerGridPosition.x, e.line.centerGridPosition.y), Quaternion.Euler(0,0,eulerZ));
         lineCompleteTransform.GetComponent<NetworkObject>().Spawn(true);
     }
 
