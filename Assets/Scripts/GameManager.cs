@@ -22,6 +22,7 @@ public class GameManager : NetworkBehaviour
     public class OnGameWinEventArgs : EventArgs
     {
         public Line line;
+        public PlayerType winPlayerType;
     }
     public event EventHandler OnCurrentPlayablePlayerTypeChanged;
 
@@ -195,19 +196,28 @@ public class GameManager : NetworkBehaviour
 
     private void TestWinner()
     {
-        foreach(Line line in lineList)
+        for(int i = 0; i < lineList.Count; i++)
         {
+            Line line = lineList[i];
             if (TestWinnerLine(line))
             {
                 Debug.Log("Last Line Win");
                 currentPlayablePlayerType.Value = PlayerType.None;
-                OnGameWin?.Invoke(this, new OnGameWinEventArgs
-                {
-                    line = line
-                });
+                TriggerOnGameWinRpc(i, playerTypeArr[line.centerGridPosition.x, line.centerGridPosition.y]);
                 break;
             }
         }
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnGameWinRpc(int lineIndex, PlayerType playerType)
+    {
+        Line line = lineList[lineIndex];
+        OnGameWin?.Invoke(this, new OnGameWinEventArgs
+        {
+            line = line,
+            winPlayerType = playerType,
+        });
     }
 
     public PlayerType GetLocalPlayerType()
