@@ -1585,6 +1585,7 @@ MonoBehaviour:
   resultText: {fileID: 444695767}
   winColor: {r: 0.3376855, g: 0.745283, b: 0.23553754, a: 1}
   loseColor: {r: 0.83137256, g: 0.5199306, b: 0.2862745, a: 1}
+  tieColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   rematchBtn: {fileID: 1514413720}
 --- !u!4 &868094777 stripped
 Transform:
