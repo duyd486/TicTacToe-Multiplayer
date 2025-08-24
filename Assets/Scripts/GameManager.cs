@@ -22,6 +22,8 @@ public class GameManager : NetworkBehaviour
     public event EventHandler OnTied;
     public event EventHandler<OnGameWinEventArgs> OnGameWin;
     public event EventHandler OnScoreChanged;
+    public event EventHandler OnPlaceObject;
+
     public class OnGameWinEventArgs : EventArgs
     {
         public Line line;
@@ -172,6 +174,8 @@ public class GameManager : NetworkBehaviour
             return;
         }
         playerTypeArr[x, y] = playerType;
+        TriggerOnPlaceObjectRpc();
+
         OnClickedOnGridPosition?.Invoke(this, new OnClickedOnGridPositionEventArgs
         {
             x = x,
@@ -190,6 +194,12 @@ public class GameManager : NetworkBehaviour
                 break;
         }
         TestWinner();
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnPlaceObjectRpc()
+    {
+        OnPlaceObject?.Invoke(this, EventArgs.Empty);
     }
 
     private bool TestWinnerLine(Line line)
